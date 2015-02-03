@@ -1,0 +1,73 @@
+/* miseEnPage.css 
+octobre 2011 */
+
+body {margin: 0px;
+font-family: sans-serif; 
+}
+
+div {padding: 8px;
+}
+
+.haut {
+  border-bottom: 2px solid silver;
+  padding: 0px;
+  height: 90px;
+}
+
+.milieu {
+  display: table; /* AJOUT */
+  padding: 0px;
+}
+
+/*.bas {color: green;
+  border: 3px solid magenta;
+}*/
+
+.hautCentre {
+  padding: 0px;
+  text-align: center;
+  margin-left: 250px;
+  font-size: 36px;
+  padding-top: 20px;
+  height: 70px; /* + le padding-top (20) + border rouge deux fois (4) = 90 */
+}
+
+.hautGauche {float: left;
+top: 0px;
+left: 0px;
+padding: 0px;
+}
+
+.menu { 
+  width: 200px;
+  display:table-cell;
+  border-right: 2px solid silver;
+}
+
+.contenu {
+  margin-left: 200px;
+  display:table-cell;
+}
+
+ul {margin: 0px;
+}
+
+/* AJOUT */
+.menu a {text-decoration: none;
+  color: black;
+}
+
+.menu a:hover {color: red;
+  font-weight: bold;
+}
+
+.menu li {list-style-type: none;
+  padding: 6px;
+  background-color: #DDD; /* gris */
+  margin-bottom: 1px;
+}
+
+#titre { color: red;
+	 text-align: center;
+}
+

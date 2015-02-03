@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
+
+<web-app>
+
+    <welcome-file-list>
+	<welcome-file>accueil.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- paramètres de l'application web : pour le controleur -->
+
+    <context-param>
+        <param-name>cmd-accueil</param-name>
+	<param-value>com.NullCommande;accueil.jsp</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>cmd-page1</param-name>
+	<param-value>com.NullCommande;page1.jsp</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>cmd-page2</param-name>
+	<param-value>com.Com2;page2.jsp</param-value>
+    </context-param>
+
+
+    <context-param>
+        <param-name>cmd-page3</param-name>
+	<param-value>com.Com3;page3.jsp</param-value>
+    </context-param>
+
+    <servlet>
+      <servlet-name>controleur</servlet-name>
+      <servlet-class>Controleur</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>controleur</servlet-name>
+        <url-pattern>/controleur</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
