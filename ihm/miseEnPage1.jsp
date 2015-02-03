@@ -5,12 +5,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <title>Bienvenue</title>
 <link rel="stylesheet" type="text/css" href="ihm/site.css">
+<link rel="stylesheet" type="text/css" href="ihm/formulaire.css">
 </head>
 <body>
 
 <div class="haut">
      <div class="hautGauche">
-     	  <img src="ihm/logo.png" alt="logo webapp"/>
+     	  <img src="ihm/images/LogoGreyc.png" alt="logo webapp" width="141" height="47"/>
      </div>
      <div class="hautCentre">
      	  Titre général de l'application
@@ -44,7 +45,6 @@
 	  <ul>
 	    <li><a href="controleur?cmd=page1">Page 1</a></li>
 	    <li><a href="controleur?cmd=page2">Page 2</a></li>
-	    <li><a href="">...</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {

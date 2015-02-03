@@ -33,7 +33,7 @@
 
     <servlet>
       <servlet-name>controleur</servlet-name>
-      <servlet-class>Controleur</servlet-class>
+      <servlet-class>com.Controleur</servlet-class>
     </servlet>
     
     <servlet-mapping>
