@@ -17,8 +17,8 @@ Ceci constitue la page 3
 Le nombre tiré aléatoirement était : ${nombre}
 <br/>
 valeur = <c:choose>
-	 <c:when test="${nombre == 2}">deux</c:when>
-	 <c:when test="${nombre == 1}">un</c:when>
+	 <c:when test="${nombre == 2}"><c:out value="${nombre}"/></c:when>
+	 <c:when test="${nombre == 1}"><c:out value="${nombre}"/></c:when>
 	 <c:otherwise>inconnue</c:otherwise>
 </c:choose>
 

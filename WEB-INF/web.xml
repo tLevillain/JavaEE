@@ -35,10 +35,20 @@
       <servlet-name>controleur</servlet-name>
       <servlet-class>com.Controleur</servlet-class>
     </servlet>
+
+    <servlet>
+      <servlet-name>creationDonnees</servlet-name>
+      <servlet-class>com.Com1</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>controleur</servlet-name>
         <url-pattern>/controleur</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>creationDonnees</servlet-name>
+        <url-pattern>/creationDonnees</url-pattern>
     </servlet-mapping>
     
 </web-app>
