@@ -11,7 +11,7 @@ div {padding: 8px;
 .haut {
   border-bottom: 2px solid silver;
   padding: 0px;
-  height: 90px;
+  height: 120px;
 }
 
 .milieu {
@@ -23,6 +23,11 @@ div {padding: 8px;
   border: 3px solid magenta;
 }*/
 
+.info {
+    font-style: italic;
+    color: #E8A22B;
+}
+
 .hautCentre {
   padding: 0px;
   text-align: center;
@@ -30,6 +35,13 @@ div {padding: 8px;
   font-size: 36px;
   padding-top: 20px;
   height: 70px; /* + le padding-top (20) + border rouge deux fois (4) = 90 */
+}
+
+.hautCentreBis {
+  padding: 0px;
+  text-align: center;
+  margin-left: 250px;
+  font-size: 20px;
 }
 
 .hautGauche {float: left;

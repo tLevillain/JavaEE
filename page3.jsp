@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% 
 	String titre = "PAGE 3";
-	String droit = "admin"; 
+	String droit = "${droit}"; 
 %>
 
 

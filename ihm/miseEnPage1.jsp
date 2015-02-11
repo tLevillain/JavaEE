@@ -14,7 +14,10 @@
      	  <img src="ihm/images/LogoGreyc.png" alt="logo webapp" width="141" height="47"/>
      </div>
      <div class="hautCentre">
-     	  Titre général de l'application
+     	  	<strong>E.S.M.A</strong>
+     </div>
+     <div class="hautCentreBis">
+     		Editeur de Systèmes Multi-Agents
      </div>
 </div>
 
@@ -43,6 +46,7 @@
      	  Consultation
 	  <hr/>
 	  <ul>
+	  	<li><a href="controleur">Acceuil</a></li>
 	    <li><a href="controleur?cmd=page1">Page 1</a></li>
 	    <li><a href="controleur?cmd=page2">Page 2</a></li>
 	  </ul>

@@ -1,6 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% 
-	String titre = "ACCUEIL ADMINISTRATION";
-	String droit = "admin"; 
+	String titre = "ACCUEIL";
+	String droit = "${droit}"; 
 %>
 
 
@@ -9,6 +12,6 @@
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
 
-BIENVENUE !
+<p>Bienvenue sur le site construit à l'aide du javaEE <strong>E.S.M.A</strong>, site en cour d'amélioration.</p>
 
 <jsp:include page="ihm/miseEnPage2.jsp" />

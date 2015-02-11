@@ -7,33 +7,30 @@ import java.io.*;
 // Exemple d'une commande qui, après avoir effectuée un traitement, passe l'info à la JSP suivante
 
 public class Com1 extends HttpServlet{
-  public static final String INPUT1 ="input1";
- 	public static final String INPUT2 ="input2";
 
-  public static final String VUE    ="/afficheDonnee.jsp";
+    public static final String DONNEE      = "donnee";
+    public static final String FORM        = "form";
+    public static final String VUE_SUCCES  = "/afficheDonnee.jsp";
+    public static final String VUE_FORM    = "/page1.jsp";
 
-  	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  		String input1 = request.getParameter(INPUT1);
-  		String input2 = request.getParameter(INPUT2);
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        /* Préparation de l'objet formulaire */
+        CreationDonnee cd = new CreationDonnee();
 
-  		String message;
-  		boolean erreur;
+        /* Traitement de la requête et récupération du bean en résultant */
+        Donnee don = cd.creerDonnee( request );
 
-  		if(input1.trim().isEmpty()) {
-  			message = "Erreur - champ obligatoire vide. <br>";
-  			erreur = true;
-  		}	else {
-  			message = "Formulaire rempli avec succès.";
-  			erreur = false;
-  		}
+        /* Ajout du bean et de l'objet métier à l'objet requête */
+        request.setAttribute( DONNEE, don );
+        request.setAttribute( FORM, cd );
 
-      Donnee don = new Donnee();
-
-      don.setValeur1(input1);
-      don.setValeur2(input2);
-
-      request.setAttribute("donnee", don);
-      this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
-  	}
+        if ( cd.getErreurs().isEmpty() ) {
+            /* Si aucune erreur, alors affichage de la fiche récapitulative */
+            this.getServletContext().getRequestDispatcher( VUE_SUCCES ).forward( request, response );
+        } else {
+            /* Sinon, ré-affichage du formulaire de création avec les erreurs */
+            this.getServletContext().getRequestDispatcher( VUE_FORM ).forward( request, response );
+        }
+    }
 }
 
