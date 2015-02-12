@@ -26,8 +26,7 @@ public class jDOM {
 
     public static void affiche(){
 	try
-	    {
-		//On utilise ici un affichage classique avec getPrettyFormat()
+	    {	     
 		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
 		sortie.output(document, System.out);
 	    }
@@ -37,11 +36,8 @@ public class jDOM {
     public static void enregistre(String fichier)
     {
 	try
-	    {
-		//On utilise ici un affichage classique avec getPrettyFormat()
+	    {		
 		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
-		//Remarquez qu'il suffit simplement de créer une instance de FileOutputStream
-		//avec en argument le nom du fichier pour effectuer la sérialisation.
 		sortie.output(document, new FileOutputStream(fichier));
 	    }
 	catch (java.io.IOException e){}
