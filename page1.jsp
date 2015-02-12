@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <% 
 	String titre = "PAGE 1";
-	String droit = "${droit}"; 
+	String droit = "admin"; 
 %>
 
 <jsp:include page="ihm/miseEnPage1.jsp">

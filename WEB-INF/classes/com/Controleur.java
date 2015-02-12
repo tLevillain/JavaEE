@@ -63,7 +63,7 @@ public class Controleur extends HttpServlet {
 		  next = JSP_EXCEPTION_CMD;
 		}
 
-		req.setAttribute("droit", "other");
+		req.setAttribute("droit", "admin");
 		//on active la vue ie la page JSP cible
 		RequestDispatcher rd = req.getRequestDispatcher(next); 
 		rd.forward(req, res); 

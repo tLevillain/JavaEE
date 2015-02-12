@@ -47,8 +47,8 @@
 	  <hr/>
 	  <ul>
 	  	<li><a href="controleur">Acceuil</a></li>
-	    <li><a href="controleur?cmd=page1">Page 1</a></li>
-	    <li><a href="controleur?cmd=page2">Page 2</a></li>
+	    <li><a href="controleur?cmd=page1">Nouveau</a></li>
+	    <li><a href="controleur?cmd=page2">Edition</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {
@@ -58,7 +58,7 @@
 	  Administration
 	  <hr/>
 	  <ul>
-	    <li><a href="controleur?cmd=page3">Page 3</a></li>
+	    <li><a href="controleur?cmd=page3">Administration</a></li>
 	    <li><a href=""> </a></li>
 	  </ul>
 	  <%

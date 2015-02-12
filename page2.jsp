@@ -1,7 +1,7 @@
 <%@ page isELIgnored="false"%>
 <% 
 	String titre = "PAGE 2";
-	String droit = "${droit}"; 
+	String droit = "admin"; 
 %>
 
 

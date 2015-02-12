@@ -24,6 +24,8 @@ public class Com1 extends HttpServlet{
         request.setAttribute( DONNEE, don );
         request.setAttribute( FORM, cd );
 
+	jDOM.creationXML(don);
+
         if ( cd.getErreurs().isEmpty() ) {
             /* Si aucune erreur, alors affichage de la fiche récapitulative */
             this.getServletContext().getRequestDispatcher( VUE_SUCCES ).forward( request, response );

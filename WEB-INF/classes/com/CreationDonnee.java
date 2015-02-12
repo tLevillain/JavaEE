@@ -60,10 +60,8 @@ public final class CreationDonnee {
     }
 
     private void validationInput2( String valeur ) throws Exception {
-        if ( valeur != null ) {
-            if ( !valeur.matches("^[0-9]*$") ) {
-                throw new Exception( "La chaîne ne doit contenir que des chiffres." );
-            }
+        if ( valeur != null ) {            
+	    //throw new Exception( "La chaîne ne doit contenir que des caractères." );          
         } else {
             throw new Exception( "Merci d'entrer une valeur." );
         }
