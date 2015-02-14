@@ -2,7 +2,7 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <% 
-	String titre = "PAGE 1";
+	String titre = "Nouveau document XML";
 	String droit = "admin"; 
 %>
 
@@ -12,5 +12,4 @@
 </jsp:include>
 
 <jsp:include page="ihm/formulaire1.jsp" />
-
 <jsp:include page="ihm/miseEnPage2.jsp" />

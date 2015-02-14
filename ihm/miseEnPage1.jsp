@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <%@ page contentType="text/html;charset=UTF-8" %>
-<title>Bienvenue</title>
+<title><%= request.getParameter("titre")%></title>
 <link rel="stylesheet" type="text/css" href="ihm/site.css">
 <link rel="stylesheet" type="text/css" href="ihm/formulaire.css">
 </head>

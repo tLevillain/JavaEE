@@ -1,6 +1,9 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <%@ page isELIgnored="false"%>
 <% 
-	String titre = "PAGE 2";
+	String titre = "Edition document XML";
 	String droit = "admin"; 
 %>
 
@@ -10,7 +13,8 @@
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
 
-Ceci constitue la page 2
+Contenu du fichier AZERTY.xml :<br/>
 
-Message issu de la commande : ${message}
+<jsp:include page="ihm/formulaire1.jsp" />
+
 <jsp:include page="ihm/miseEnPage2.jsp" />

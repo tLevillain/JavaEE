@@ -5,17 +5,19 @@ import org.jdom2.*;
 import org.jdom2.output.*;
 
 public class jDOM {
-    static Element racine              = new Element("racine");
-    static org.jdom2.Document document = new Document(racine);
+    private Element racine              = new Element("racine");
+    private org.jdom2.Document document = new Document(racine);
 
-    public static void creationXML(Donnee donnee){
+    public jDOM(){}
+
+    public void creationXML(Donnee donnee){
 	if(estRempli(donnee)){
 	    Element element1 = new Element("element1");
 	    racine.addContent(element1);
 	
-	    Attribute attribute1 = new Attribute("attribut1", donnee.getValeur1());
+	    Attribute attribute1 = new Attribute("attribut1", "toto");
 	    element1.setAttribute(attribute1);
-
+	    element1.setText(donnee.getValeur1());
 	    Element element2 = new Element("element2");
 	    element2.setText(donnee.getValeur2());
 	    element1.addContent(element2);
@@ -24,7 +26,7 @@ public class jDOM {
 	}
     }
 
-    public static void affiche(){
+    public void affiche(){
 	try
 	    {	     
 		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
@@ -33,7 +35,7 @@ public class jDOM {
 	catch (java.io.IOException e){}
     }
 
-    public static void enregistre(String fichier)
+    public void enregistre(String fichier)
     {
 	try
 	    {		
