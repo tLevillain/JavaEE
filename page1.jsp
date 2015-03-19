@@ -10,6 +10,7 @@
     	<jsp:param name="titre" value="<%=titre%>"/>
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
-
 <jsp:include page="ihm/formulaire1.jsp" />
+<jsp:include page="ihm/formulaire2.jsp" />
+
 <jsp:include page="ihm/miseEnPage2.jsp" />

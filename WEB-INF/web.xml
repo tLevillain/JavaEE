@@ -36,6 +36,11 @@
       <param-value>com.CreationDonnee;afficheDonnee.jsp</param-value>
     </context-param>
 
+    <context-param>
+      <param-name>cmd-creationTexte</param-name>
+      <param-value>com.CreationTexte;afficheXML.jsp</param-value>
+    </context-param>
+
     <servlet>
       <servlet-name>controleur</servlet-name>
       <servlet-class>com.Controleur</servlet-class>

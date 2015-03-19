@@ -13,9 +13,6 @@
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
 
-Contenu du fichier AZERTY.xml :<br/>
-
-<jsp:include page="ihm/formulaire1.jsp" />
-<jsp:include page="ihm/formulaire2.jsp" />
+Bonjour à tous :<br/>
 
 <jsp:include page="ihm/miseEnPage2.jsp" />

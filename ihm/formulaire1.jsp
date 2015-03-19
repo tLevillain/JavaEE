@@ -10,7 +10,7 @@ document.getElementById("ajout").innerHTML=document.getElementById("ajout").inne
 <div>
 	<form method="post"  action="<c:url value="/controleur?cmd=creationDonnee"/>">
 		<fieldset>
-			<legend>Formulaire1</legend>
+			<legend>Creation avec formulaire</legend>
 			<label for ="input1">Input1<span class="requis">*</span></label>
 			<input type="text" id ="input1" name ="input1" value ="<c:out value="${donnee.valeur1}"/>" size ="30" maxlength="30" />
 			<span class="erreur">${form.erreurs['input1']}</span>

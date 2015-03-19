@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <%@ page isELIgnored="false"%>
 <% 
-	String titre = "Edition document XML";
+	String titre = "Affichage document XML";
 	String droit = "admin"; 
 %>
 
@@ -14,8 +14,5 @@
 </jsp:include>
 
 Contenu du fichier AZERTY.xml :<br/>
-
-<jsp:include page="ihm/formulaire1.jsp" />
-<jsp:include page="ihm/formulaire2.jsp" />
-
+<c:out value="${xml}"/></br>
 <jsp:include page="ihm/miseEnPage2.jsp" />
