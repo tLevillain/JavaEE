@@ -31,39 +31,19 @@
 	<param-value>com.Com3;page3.jsp</param-value>
     </context-param>
 
+    <context-param>
+      <param-name>cmd-creationDonnee</param-name>
+      <param-value>com.CreationDonnee;afficheDonnee.jsp</param-value>
+    </context-param>
 
     <servlet>
       <servlet-name>controleur</servlet-name>
       <servlet-class>com.Controleur</servlet-class>
     </servlet>
 
-    <servlet>
-      <servlet-name>creationDonnees</servlet-name>
-      <servlet-class>com.CreationServlet</servlet-class>
-    </servlet>
-
-    <servlet>
-      <servlet-name>download</servlet-name>
-      <servlet-class>com.Download</servlet-class>
-      <init-param>
-        <param-name>chemin</param-name> 
-        <param-value>/fichiers/</param-value> 
-      </init-param>
-    </servlet>
-    
     <servlet-mapping>
         <servlet-name>controleur</servlet-name>
         <url-pattern>/controleur</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>creationDonnees</servlet-name>
-        <url-pattern>/creationDonnees</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>download</servlet-name>
-        <url-pattern>/fichier/*</url-pattern>
     </servlet-mapping>
     
 </web-app>

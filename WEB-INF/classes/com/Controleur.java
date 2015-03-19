@@ -162,5 +162,8 @@ public class Controleur extends HttpServlet {
 	    } //fin du for                 
 	} //fin méthode init
 
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	service(request, response);
+    }
 } //fin de la classe
 

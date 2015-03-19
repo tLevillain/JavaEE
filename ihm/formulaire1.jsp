@@ -8,7 +8,7 @@ document.getElementById("ajout").innerHTML=document.getElementById("ajout").inne
 </script>
 
 <div>
-	<form method="post"  action="<c:url value="/creationDonnees"/>">
+	<form method="post"  action="<c:url value="/controleur?cmd=creationDonnee"/>">
 		<fieldset>
 			<legend>Formulaire1</legend>
 			<label for ="input1">Input1<span class="requis">*</span></label>

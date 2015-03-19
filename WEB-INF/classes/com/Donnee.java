@@ -1,5 +1,4 @@
 package com;
-
 public class Donnee {
 	private String valeur1;
 	private String valeur2;

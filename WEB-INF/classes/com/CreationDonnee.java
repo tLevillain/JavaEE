@@ -2,15 +2,22 @@ package com;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.io.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-public final class CreationDonnee {
+public class CreationDonnee implements Commande {
     private static final String CHAMP_INPUT1    ="input1";
     private static final String CHAMP_INPUT2    ="input2";
 
     private String              resultat;
     private Map<String, String> erreurs         = new HashMap<String, String>();
+
+    private String next;
+
+    public CreationDonnee(String next){
+	this.next = next;
+    }
 
     public Map<String, String> getErreurs() {
         return erreurs;
@@ -20,10 +27,18 @@ public final class CreationDonnee {
         return resultat;
     }
 
+    public String execute(HttpServletRequest req) throws Exception 
+    {
+	Donnee d = creerDonnee(req);
+	req.setAttribute("donnee", d);
+	jDOM jd = new jDOM();
+	jd.creationXML(d);
+	return next;
+    }
+
     public Donnee creerDonnee( HttpServletRequest request ) {
         String input1      = getValeurChamp( request, CHAMP_INPUT1 );
         String input2      = getValeurChamp( request, CHAMP_INPUT2 );
-
 
         Donnee donnee = new Donnee();
 
