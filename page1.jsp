@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <% 
 	String titre = "Nouveau document XML";
-	String droit = "admin"; 
+	String droit = "${droit}"; 
 %>
 
 <jsp:include page="ihm/miseEnPage1.jsp">

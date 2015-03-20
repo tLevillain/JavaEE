@@ -41,6 +41,11 @@
       <param-value>com.CreationTexte;afficheXML.jsp</param-value>
     </context-param>
 
+    <context-param>
+      <param-name>cmd-editionXML</param-name>
+      <param-value>com.editionXML;page2.jsp</param-value>
+    </context-param>
+
     <servlet>
       <servlet-name>controleur</servlet-name>
       <servlet-class>com.Controleur</servlet-class>

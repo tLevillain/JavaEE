@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false"%>
 <% 
 	String titre = "Affichage document XML";
-	String droit = "admin"; 
+	String droit = "${droit}"; 
 %>
 
 
@@ -13,6 +13,6 @@
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
 
-Contenu du fichier AZERTY.xml :<br/>
+Contenu du fichier <c:out value="${nom}"/>.xml :<br/>
 <c:out value="${xml}"/></br>
 <jsp:include page="ihm/miseEnPage2.jsp" />

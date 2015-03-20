@@ -48,7 +48,7 @@
 	  <ul>
 	  	<li><a href="controleur">Acceuil</a></li>
 	    <li><a href="controleur?cmd=page1">Nouveau</a></li>
-	    <li><a href="controleur?cmd=page2">Edition</a></li>
+	    <li><a href="controleur?cmd=editionXML">Edition</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {
@@ -58,7 +58,7 @@
 	  Administration
 	  <hr/>
 	  <ul>
-	    <li><a href="controleur?cmd=page3">Administration</a></li>
+	    <li><a href="controleur?cmd=editionXML">Administration</a></li>
 	    <li><a href=""> </a></li>
 	  </ul>
 	  <%

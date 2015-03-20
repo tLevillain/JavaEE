@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false"%>
 <% 
 	String titre = "Edition document XML";
-	String droit = "admin"; 
+	String droit = "${droit}"; 
 %>
 
 

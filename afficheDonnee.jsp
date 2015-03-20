@@ -3,7 +3,7 @@
 <%@ page isELIgnored="false"%>
 <% 
 	String titre = "PAGE 1";
-	String droit = "admin"; 
+	String droit = "${droit}"; 
 %>
 
 <jsp:include page="ihm/miseEnPage1.jsp">
