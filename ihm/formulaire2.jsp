@@ -37,9 +37,11 @@ function insertTab(o, e)
 		<fieldset>
 			<legend>Creation avec texte</legend>
 			<label for = "nomFichier">Nom  <span class="requis">*</span></label>
-			<input type = "text" name = "nomFichier" id = "nomFichier" size = "30" maxlength = "30" /><br/><br/>
+			<c:out value ="${erreur['nomFichier']}"/><br/>
+			<input type = "text" name = "nomFichier" id = "nomFichier" size = "30" maxlength = "30"  value="<c:out value ="${nom}"/>" /><br/><br/>
 			
-			<label for ="input1">Contenu XML  <span class="requis">*</span></label><br/>
+			<label for ="input1">Contenu XML  <span class="requis">*</span></label><br/><br/>
+			<c:out value ="${erreur['mybox']}"/><c:out value ="${resultat}"/>
 			<textarea id ="text-area" name = "mybox" onkeydown="insertTab(this,event);" row="100" cols="100" style="min-height:300px;"><c:out value ="${xml}"/>		
 			</textarea><br/>	
 		<input type="submit" value="Valider"  />

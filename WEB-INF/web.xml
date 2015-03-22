@@ -38,7 +38,7 @@
 
     <context-param>
       <param-name>cmd-creationTexte</param-name>
-      <param-value>com.CreationTexte;afficheXML.jsp</param-value>
+      <param-value>com.CreationTexte;page2.jsp</param-value>
     </context-param>
 
     <context-param>
