@@ -73,11 +73,11 @@ public class CreationTexte implements Commande {
     }
 
     /**
-     *Traite CHAMP_NOM et CHAMP_TEXTE, verifie les erreurs et génère le fichier "nom".xml avec le contenu de CHAMP_TEXTE
+     *Traite CHAMP_NOM et CHAMP_TEXTE, verifie les erreurs et genere le fichier "nom".xml avec le contenu de CHAMP_TEXTE
      *@param req
      *le contenu de la requete HTML.
      *@return next La prochaine page a afficher.
-     *@throws Exception Si jamais une exception est relevée.
+     *@throws Exception Si jamais une exception est relevee.
      */
     public String execute(HttpServletRequest req) throws Exception 
     {
@@ -103,11 +103,13 @@ public class CreationTexte implements Commande {
 	    setErreur(CHAMP_TEXTE, e.getMessage());
 	}
 	
-	//Si il n'y a pas d'erreurs, on indique le résultat positif
+	File file = new File("/home/syron/Documents/" + nom);
+	
+	//Si il n'y a pas d'erreurs, on indique le résultat positif, sinon le fichier est détruit.
 	if(erreurs.isEmpty()) {
 	    resultat = "Document " + nom + " créé avec succés.";
 	} else {
-	    resultat ="";
+	    file.delete();
 	}
 	//Attibution des différentes attributs au champ req
 	req.setAttribute("resultat", resultat);

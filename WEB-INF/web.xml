@@ -8,7 +8,7 @@
 	<welcome-file>accueil.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- paramètres de l'application web : pour le controleur -->
+    <!-- parametres de l'application web : pour le controleur -->
 
     <context-param>
         <param-name>cmd-accueil</param-name>
@@ -16,34 +16,13 @@
     </context-param>
 
     <context-param>
-        <param-name>cmd-page1</param-name>
-	<param-value>com.Com1;page1.jsp</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>cmd-page2</param-name>
-	<param-value>com.Com2;page2.jsp</param-value>
-    </context-param>
-
-
-    <context-param>
-        <param-name>cmd-page3</param-name>
-	<param-value>com.Com3;page3.jsp</param-value>
-    </context-param>
-
-    <context-param>
-      <param-name>cmd-creationDonnee</param-name>
-      <param-value>com.CreationDonnee;afficheDonnee.jsp</param-value>
-    </context-param>
-
-    <context-param>
       <param-name>cmd-creationTexte</param-name>
-      <param-value>com.CreationTexte;page2.jsp</param-value>
+      <param-value>com.CreationTexte;editionXML.jsp</param-value>
     </context-param>
 
     <context-param>
       <param-name>cmd-editionXML</param-name>
-      <param-value>com.editionXML;page2.jsp</param-value>
+      <param-value>com.editionXML;editionXML.jsp</param-value>
     </context-param>
 
     <servlet>

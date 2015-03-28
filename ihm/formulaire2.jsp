@@ -41,7 +41,7 @@ function insertTab(o, e)
 			<input type = "text" name = "nomFichier" id = "nomFichier" size = "30" maxlength = "30"  value="<c:out value ="${nom}"/>" /><br/><br/>
 			
 			<label for ="input1">Contenu XML  <span class="requis">*</span></label><br/><br/>
-			<c:out value ="${erreur['mybox']}"/><c:out value ="${resultat}"/>
+			<c:out value ="${erreur['mybox']}"/><c:out value ="${resultat}"/><br/>
 			<textarea id ="text-area" name = "mybox" onkeydown="insertTab(this,event);" row="100" cols="100" style="min-height:300px;"><c:out value ="${xml}"/>		
 			</textarea><br/>	
 		<input type="submit" value="Valider"  />

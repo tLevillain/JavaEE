@@ -47,8 +47,7 @@
 	  <hr/>
 	  <ul>
 	  	<li><a href="controleur">Acceuil</a></li>
-	    <li><a href="controleur?cmd=page1">Nouveau</a></li>
-	    <li><a href="controleur?cmd=editionXML">Edition</a></li>
+	    <li><a href="controleur?cmd=editionXML">Edition/Creation</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {
