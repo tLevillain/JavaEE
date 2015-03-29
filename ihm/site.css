@@ -83,3 +83,11 @@ ul {margin: 0px;
 	 text-align: center;
 }
 
+#erreur {
+    color : red;
+}
+
+.erreur {
+    color : red;
+    font-size : 20px;
+}

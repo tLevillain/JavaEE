@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import java.lang.reflect.Constructor;
-
+import javax.servlet.http.HttpSession;
 /**
  *Classe de controle de l'application web, execute les differentes commandes
  *@author Brunot.Mermet
@@ -16,7 +16,7 @@ public class Controleur extends HttpServlet {
     private static final String JSP_ERREUR_INIT = "/erreurs/erreurInitControleur.jsp";
     private static final String JSP_ERREUR_CMD = "/erreurs/erreurCommande.jsp";
     private static final String JSP_EXCEPTION_CMD = "/erreurs/exceptionCommande.jsp";
-
+    private static final String VUE_ERR_CONNECT = "/Stage/connexion";
     /**
      * code de l'erreur éventuellement générée pendant
      * l'initialisation de la hashmap (méthode init)
@@ -29,6 +29,7 @@ public class Controleur extends HttpServlet {
      */
     private int erreur;
     private String messageErreur; 
+    private HttpSession session;
     /**
      *Permet d'exectuer une commande et de passer a la jsp suivante.
      *@param req
@@ -39,47 +40,51 @@ public class Controleur extends HttpServlet {
      *@throws IOException Si une exception est relevee.
      */
     public void service(HttpServletRequest req, HttpServletResponse res) 
-	throws ServletException, IOException { 
-
-	//on vérifie si la méthode init a déclenché une erreur
-	if (erreur !=0) {
-	    req.setAttribute("code", erreur);
-	    req.setAttribute("mess", messageErreur);
-	    RequestDispatcher rd1 = req.getRequestDispatcher(JSP_ERREUR_INIT); 
-	    rd1.forward(req, res);
-	    return;
+	throws ServletException, IOException {
+	session = req.getSession();
+	String next = null;
+	if(session.getAttribute("sessionUtilisateur")==null) {
+	    res.sendRedirect(VUE_ERR_CONNECT);
 	}
-
-	String next=null;
-	//on récupère le nom de la commande à activer dans la requête reçue                               
-	String cmd = req.getParameter("cmd");      
-	if (cmd==null) { cmd="accueil"; }
 	else {
-	    if (!map.containsKey(cmd)) {
-		RequestDispatcher rd1 = req.getRequestDispatcher(JSP_ERREUR_CMD); 
-		rd1.forward(req, res); 
+	    //on vérifie si la méthode init a déclenché une erreur
+	    if (erreur !=0) {
+		req.setAttribute("code", erreur);
+		req.setAttribute("mess", messageErreur);
+		RequestDispatcher rd1 = req.getRequestDispatcher(JSP_ERREUR_INIT); 
+		rd1.forward(req, res);
 		return;
 	    }
+
+	    //on récupère le nom de la commande à activer dans la requête reçue                               
+	    String cmd = req.getParameter("cmd");      
+	    if (cmd==null) { cmd="accueil"; }
+	    else {
+		if (!map.containsKey(cmd)) {
+		    RequestDispatcher rd1 = req.getRequestDispatcher(JSP_ERREUR_CMD); 
+		    rd1.forward(req, res); 
+		    return;
+		}
+	    }
+
+	    //on récupère l'objet de type Commande associé au nom de commande précédent
+	    Commande cde = map.get(cmd);                 
+	    try {
+		//on exécute la méthode execute de l'objet "commande" sélectionné
+		//cette méthode renvoie le nom de la JSP qui devra être activée ensuite
+		next = cde.execute(req);
+	    } catch(Exception ex){
+		req.setAttribute("exception",ex.getMessage());
+		req.setAttribute("classeException",ex.getClass().getSimpleName());
+		req.setAttribute("classe",cde.getClass().getName());
+		next = JSP_EXCEPTION_CMD;
+	    }
+	    req.setAttribute("droit", "admin");
+	
+	    //on active la vue ie la page JSP cible
+	    RequestDispatcher rd = req.getRequestDispatcher(next); 
+	    rd.forward(req, res);
 	}
-
-	//on récupère l'objet de type Commande associé au nom de commande précédent
-	Commande cde = map.get(cmd);                 
-	try {
-	    //on exécute la méthode execute de l'objet "commande" sélectionné
-	    //cette méthode renvoie le nom de la JSP qui devra être activée ensuite
-	    next = cde.execute(req);
-	} catch(Exception ex){
-	    req.setAttribute("exception",ex.getMessage());
-	    req.setAttribute("classeException",ex.getClass().getSimpleName());
-	    req.setAttribute("classe",cde.getClass().getName());
-	    next = JSP_EXCEPTION_CMD;
-	}
-
-	req.setAttribute("droit", "admin");
-	//on active la vue ie la page JSP cible
-	RequestDispatcher rd = req.getRequestDispatcher(next); 
-	rd.forward(req, res); 
-
     } //fin méthode service
 
     /**

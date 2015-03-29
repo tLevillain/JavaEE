@@ -39,15 +39,16 @@
 
 <div class="milieu">
      <div class="menu">
-	  <a href="controleur?cmd=deconnect"> D&eacute;connexion </a>
+	  <a href="connexion"> D&eacute;connexion </a>
 	  <br/>
 	  <br/>
 	  <hr/>
      	  Consultation
 	  <hr/>
 	  <ul>
-	  	<li><a href="controleur">Acceuil</a></li>
+	    <li><a href="controleur">Acceuil</a></li>
 	    <li><a href="controleur?cmd=editionXML">Edition/Creation</a></li>
+	    <li><a href="JAVADOC/index.html">Documentation</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {

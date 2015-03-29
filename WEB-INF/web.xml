@@ -5,7 +5,7 @@
 <web-app>
 
     <welcome-file-list>
-	<welcome-file>accueil.jsp</welcome-file>
+	<welcome-file>acceuil.jsp</welcome-file>
     </welcome-file-list>
 
     <!-- parametres de l'application web : pour le controleur -->
@@ -18,7 +18,7 @@
     <context-param>
       <param-name>cmd-creationTexte</param-name>
       <param-value>com.CreationTexte;editionXML.jsp</param-value>
-    </context-param>
+    </context-param>  
 
     <context-param>
       <param-name>cmd-editionXML</param-name>
@@ -34,5 +34,27 @@
         <servlet-name>controleur</servlet-name>
         <url-pattern>/controleur</url-pattern>
     </servlet-mapping>
+
+     <servlet>
+      <servlet-name>connexion</servlet-name>
+      <servlet-class>com.Connexion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>connexion</servlet-name>
+        <url-pattern>/connexion</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+      <servlet-name>creationCompte</servlet-name>
+      <servlet-class>com.CreationCompte</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>creationCompte</servlet-name>
+        <url-pattern>/creationCompte</url-pattern>
+    </servlet-mapping>
     
+    
+
 </web-app>

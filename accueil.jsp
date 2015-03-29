@@ -11,7 +11,7 @@
     	<jsp:param name="titre" value="<%=titre%>"/>
 	<jsp:param name="droit" value="<%=droit%>" />
 </jsp:include>
-
+<p>Bienvenue ${sessionScope.sessionUtilisateur.nom}.</p>
 <p>Bienvenue sur le site construit à l'aide du javaEE <strong>E.S.M.A</strong>, site en cour d'amélioration.</p>
 
 <jsp:include page="ihm/miseEnPage2.jsp" />

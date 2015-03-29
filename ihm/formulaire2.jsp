@@ -35,15 +35,28 @@ function insertTab(o, e)
 <div>
 	<form method="post"  action="<c:url value="/controleur?cmd=creationTexte"/>">
 		<fieldset>
-			<legend>Creation avec texte</legend>
+			<legend>Edition</legend>
 			<label for = "nomFichier">Nom  <span class="requis">*</span></label>
 			<c:out value ="${erreur['nomFichier']}"/><br/>
 			<input type = "text" name = "nomFichier" id = "nomFichier" size = "30" maxlength = "30"  value="<c:out value ="${nom}"/>" /><br/><br/>
+		
 			
 			<label for ="input1">Contenu XML  <span class="requis">*</span></label><br/><br/>
 			<c:out value ="${erreur['mybox']}"/><c:out value ="${resultat}"/><br/>
 			<textarea id ="text-area" name = "mybox" onkeydown="insertTab(this,event);" row="100" cols="100" style="min-height:300px;"><c:out value ="${xml}"/>		
 			</textarea><br/>	
+		<input type="submit" value="Valider"  />
+        <input type="reset" value="Reset" /> <br />   
+	       
+		</fieldset>
+	</form>
+</div>
+
+<div>
+	<form method="post"  action="<c:url value="/controleur?cmd=chargementFichier"/>">
+		<fieldset>
+			<legend>Chargement de fichier</legend>
+			<input type = "file" name = "fichier" id ="fichier size = "30" maxlenght ="30/>		
 		<input type="submit" value="Valider"  />
         <input type="reset" value="Reset" /> <br />   
 	       
